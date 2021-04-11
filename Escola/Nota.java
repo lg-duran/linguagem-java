@@ -4,6 +4,7 @@ public class Nota {
     private double segundoBimestre;
     private double terceiroBimestre;
     private double quartoBimestre;
+    Aluno aluno;
     
     public Nota(double primeiroBimestre, double segundoBimestre, double terceiroBimestre, double quartoBimestre) {
         this.primeiroBimestre = primeiroBimestre;
