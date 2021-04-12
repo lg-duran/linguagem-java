@@ -19,7 +19,6 @@ public class Nota {
     
     @Override
     public String toString() {
-        return "nota do primeiro bimestre: " + this.primeiroBimestre + "\nnota do segundo bimestre: " + this.segundoBimestre + 
-        "\nnota do terceiro bimestre: " + this.terceiroBimestre + "\nnota do quarto bimestre: " + this.quartoBimestre;
+        return this.primeiroBimestre + " | " + this.segundoBimestre + " | " + this.terceiroBimestre + " | " + this.quartoBimestre;
     }
 }
