@@ -1,8 +1,17 @@
 public class Turma {
+    // A
+    // B
+    // C
+    //...
     
-    String nome;
+    private String nome;
     
     public Turma(String nome) {
         this.nome = nome;
+    }
+    
+    @Override
+    public String toString() {
+        return this.nome;
     }
 }

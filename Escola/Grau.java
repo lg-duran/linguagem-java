@@ -1,12 +1,12 @@
-public class Periodo {
-    
-    // matutino
-    // vespertino
-    // noturno
+public class Grau {
+
+    // primeiro grau
+    // segundo grau
+    // terceiro grau
     
     private String nome;
-
-    public Periodo(String nome) {
+    
+    public Grau(String nome) {
         this.nome = nome;
     }
     
