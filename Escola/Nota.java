@@ -6,11 +6,12 @@ public class Nota {
     private double quartoBimestre;
     Aluno aluno;
     
-    public Nota(double primeiroBimestre, double segundoBimestre, double terceiroBimestre, double quartoBimestre) {
+    public Nota(Aluno aluno, double primeiroBimestre, double segundoBimestre, double terceiroBimestre, double quartoBimestre) {
+        this.aluno = aluno;
         this.primeiroBimestre = primeiroBimestre;
         this.segundoBimestre = segundoBimestre;
         this.terceiroBimestre = terceiroBimestre;
-        this.quartoBimestre = quartoBimestre;
+        this.quartoBimestre = quartoBimestre;        
     }
     
     public double calcularMedia() {    
@@ -19,6 +20,6 @@ public class Nota {
     
     @Override
     public String toString() {
-        return this.primeiroBimestre + " | " + this.segundoBimestre + " | " + this.terceiroBimestre + " | " + this.quartoBimestre;
+        return this.aluno.getNome() + " | " + this.primeiroBimestre + " | " + this.segundoBimestre + " | " + this.terceiroBimestre + " | " + this.quartoBimestre;  
     }
 }

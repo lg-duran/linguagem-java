@@ -1,13 +1,17 @@
 public class Aluno {
 
     private String nome;
-    private int anoDeNascimento;  
+    private int anoDeNascimento;    
+    
 
+    public Aluno() {
+    }
+    
     public Aluno(String nome, int anoDeNascimento) {
         this.nome = nome;
         this.anoDeNascimento = anoDeNascimento;         
-    }
-
+    }    
+    
     public int calcularIdade(int anoAtual) {
         return anoAtual - this.anoDeNascimento;
     }
@@ -15,5 +19,10 @@ public class Aluno {
     public String getNome() {
         return this.nome;
     }
-       
+    
+    @Override
+    public String toString() {
+        return "NOME.....: "   +  this.nome + "\n" +
+               "IDADE....: "   +  calcularIdade(2021);
+    }
 } 

@@ -12,15 +12,15 @@ public class Relatorio {
         this.nota= nota;
     }
     
-    public String imprimirRelatorio() {
+    @Override
+    public String toString() {
         return 
         "====================================================================================================" 
                       +                                   "\n"  +
         "RELATORIO: " + this.nome                      +  "\n"  +
-        "NOME.....: " + this.aluno.getNome()           +  "\n"  +
-        "IDADE....: " + this.aluno.calcularIdade(2021) +  "\n"  +
-                        this.sala.toString()           +  "\n"  +
-        "NOTA.....: " + this.nota.toString()           +  "\n"  +
+                        this.aluno                     +  "\n"  +                                       
+                        this.sala                      +  "\n"  +
+        "NOTA.....: " + this.nota                      +  "\n"  +
         "===================================================================================================="
                                                         + "\n"  + 
                                                           "\n"  ;
