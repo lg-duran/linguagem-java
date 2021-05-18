@@ -23,6 +23,6 @@ public class Aluno {
     @Override
     public String toString() {
         return "NOME.....: "   +  this.nome + "\n" +
-               "IDADE....: "   +  calcularIdade(2021);
+               "IDADE....: "   +  this.calcularIdade(2021);
     }
 } 

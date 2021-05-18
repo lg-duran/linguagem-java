@@ -4,7 +4,7 @@ public class Nota {
     private double segundoBimestre;
     private double terceiroBimestre;
     private double quartoBimestre;
-    Aluno aluno;
+    private Aluno aluno;
     
     public Nota(Aluno aluno, double primeiroBimestre, double segundoBimestre, double terceiroBimestre, double quartoBimestre) {
         this.aluno = aluno;
@@ -18,8 +18,12 @@ public class Nota {
         return (this.primeiroBimestre + this.segundoBimestre + this.terceiroBimestre + this.quartoBimestre) / 4;   
     }
     
+    public String getAluno() {
+        return this.aluno.getNome();
+    }
+    
     @Override
     public String toString() {
-        return this.aluno.getNome() + " | " + this.primeiroBimestre + " | " + this.segundoBimestre + " | " + this.terceiroBimestre + " | " + this.quartoBimestre;  
+        return this.primeiroBimestre + " | " + this.segundoBimestre + " | " + this.terceiroBimestre + " | " + this.quartoBimestre;  
     }
 }

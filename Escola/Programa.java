@@ -9,27 +9,16 @@ public class Programa {
         
         Nota nota1 = new Nota(aluno1, 90.0, 75.0, 98.0, 100.0);
         
-        Nota nota2 = new Nota(aluno2, 85.0, 79.0, 95.0, 97.0);        
+        Nota nota2 = new Nota(aluno2, 85.0, 79.0, 95.0, 97.0);             
+
         
         
-        Serie primeiraSerie = new Serie("primeira serie");
-        
-        
-        Turma turmaA = new Turma("turma A");        
-        
-        
-        Periodo periodoMatutino = new Periodo("matutino");        
-        
-        
-        Grau primeiroGrau = new Grau("primeiro grau");
-        
-        
-        Sala primeiraSala = new Sala("1 sala", primeiraSerie, turmaA, periodoMatutino, primeiroGrau); 
+        Sala primeiraSala = new Sala("1 sala", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(), TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
                 
         
-        Relatorio primeiroRelatorio = new Relatorio("Primeiro", aluno1, primeiraSala, nota1); 
+        Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1); 
         
-        Relatorio segundoRelatorio = new Relatorio("Segundo", aluno2, primeiraSala, nota2);
+        Relatorio segundoRelatorio = new Relatorio("Segundo", primeiraSala, nota2);
         
   
         System.out.println(primeiroRelatorio);

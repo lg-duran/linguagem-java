@@ -1,26 +1,26 @@
 public class Sala {
     
     private String numeracao;
-    private Serie serie;
-    private Turma turma;
-    private Periodo periodo;
-    private Grau grau;
+    private String serieGrau;
+    private String turmaPeriodo;
     
-    public Sala(String numeracao, Serie serie, Turma turma, Periodo periodo, Grau grau) {
+    public Sala(String numeracao, String serieGrau, String turmaPeriodo) {
         this.numeracao = numeracao;
-        this.serie = serie;
-        this.turma = turma;
-        this.periodo = periodo;
-        this.grau = grau;
+        this.serieGrau = serieGrau;
+        this.turmaPeriodo = turmaPeriodo;
     }
     
     @Override
     public String toString() {
     return 
-    "SALA.....: " + this.numeracao + "\n" +
-    "SERIE....: " + this.serie     + "\n" +
-    "Turma....: " + this.turma     + "\n" + 
-    "Periodo..: " + this.periodo   + "\n" +
-    "Grau.....: " + this.grau;
+    "SALA...........: " + this.numeracao + "\n" +
+    "SERIE E GRAU...: " + this.serieGrau + "\n" +
+    "TURMA E PERIODO: " + this.turmaPeriodo;     
+    
+    //+
+    //"Turma....: " + this.turma     + "\n" + 
+    //"Periodo..: " + this.periodo   + "\n" +
+    //"Grau.....: " + this.grau
+    //;
     }
 }
