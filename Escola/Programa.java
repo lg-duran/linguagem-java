@@ -13,12 +13,17 @@ public class Programa {
 
         
         
-        Sala primeiraSala = new Sala("1 sala", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(), TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
+        Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(),
+                                                TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
                 
+        Frequencia frequencia1 = new Frequencia(aluno1);
         
-        Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1); 
+        frequencia1.chamada(true, "19/05/2021");
         
-        Relatorio segundoRelatorio = new Relatorio("Segundo", primeiraSala, nota2);
+        
+        Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1, frequencia1);
+        
+        Relatorio segundoRelatorio = new Relatorio("Segundo", primeiraSala, nota2, null);
         
   
         System.out.println(primeiroRelatorio);
