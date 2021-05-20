@@ -15,10 +15,13 @@ public class Programa {
         
         Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(),
                                                 TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
-                
+                                                        
         Frequencia frequencia1 = new Frequencia(aluno1);
         
-        frequencia1.chamada(true, "19/05/2021");
+        frequencia1.chamada(true, "20/05/2021");
+        
+        //System.out.println(frequencia1.varrerArray(true, "20/05/2021"));
+               
         
         
         Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1, frequencia1);
