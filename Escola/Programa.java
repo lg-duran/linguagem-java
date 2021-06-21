@@ -5,28 +5,43 @@ public class Programa {
         Aluno aluno1 = new Aluno("Astoufino", 2008);
                
         Aluno aluno2 = new Aluno("Jurema", 2011);
+         
+        
+        Materia materia1 = new Materia(aluno1);
+        
+        materia1.adicionarMateria("Matematica");
+        
+        materia1.adicionarMateria("Ciencias");
+        
+        materia1.adicionarMateria("Historia");
         
         
-        Nota nota1 = new Nota(aluno1, 90.0, 75.0, 98.0, 100.0);
+                
+        Nota nota1 = new Nota(aluno1);
         
-        Nota nota2 = new Nota(aluno2, 85.0, 79.0, 95.0, 97.0);             
-
+        Nota nota2 = new Nota(aluno2); 
+        
+        nota1.adicionarNota(90.0);
+        
+        nota1.adicionarNota(75.0);
+        
+        
+        
+        
+        
+        
         
         
         Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(),
                                                 TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
-                                                        
-        Frequencia frequencia1 = new Frequencia(aluno1);
+       
         
-        frequencia1.chamada(true, "20/05/2021");
-        
-        //System.out.println(frequencia1.varrerArray(true, "20/05/2021"));
-               
+       
         
         
-        Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1, frequencia1);
+        Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1, materia1);
         
-        Relatorio segundoRelatorio = new Relatorio("Segundo", primeiraSala, nota2, null);
+        Relatorio segundoRelatorio = new Relatorio("Segundo", primeiraSala, nota2, materia1);
         
   
         System.out.println(primeiroRelatorio);
