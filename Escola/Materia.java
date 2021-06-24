@@ -1,7 +1,7 @@
 public class Materia {
 
     private Aluno aluno;
-    private String[] materias = new String[3];
+    private String[] materias = new String[4];
     
     public Materia(Aluno aluno) {
         this.aluno = aluno;

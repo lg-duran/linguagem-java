@@ -26,8 +26,16 @@ public class Nota {
     }
         
     public double calcularMedia() {    
-    //    return (this.primeiroBimestre + this.segundoBimestre + this.terceiroBimestre + this.quartoBimestre) / 4;  
-    return 0;
+    
+        double media = 0.0;
+        
+        for (int i = 0; i < notas.length; i++) {
+            
+            media = media + this.notas[i];
+            
+        }
+        
+        return media / 4;    
     }
     
     public String getAluno() {
@@ -36,7 +44,19 @@ public class Nota {
     
     @Override
     public String toString() {
-    //    return this.primeiroBimestre + " | " + this.segundoBimestre + " | " + this.terceiroBimestre + " | " + this.quartoBimestre;  
-    return "";
+    
+        String nota = "";
+        
+        for (int i = 0; i < this.notas.length; i++) {            
+            
+            if(i == 0) {
+                nota = nota + this.notas[i];    
+            } else {
+                nota = nota + " | " + this.notas[i];    
+            }
+            
+        }
+        
+        return nota;
     }
 }

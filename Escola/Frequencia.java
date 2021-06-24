@@ -7,35 +7,68 @@ public class Frequencia {
     public Frequencia(Aluno aluno) {    
         this.aluno = aluno;
     }
+        
+    public void chamada(boolean presenca, String data) {        
+        int posicaoLivreDoArray = percorrerArray();        
+        this.presenca[posicaoLivreDoArray] = presenca;
+        
+        int posicaoLivreDoArrayData = percorrerArrayData();
+        this.data[posicaoLivreDoArrayData] = data;
+    }
     
-    /*
-    public String varrerArray(boolean presenca, String data) {
-        for (int i = 0; i < this.presenca.length; i++) {
-            if (i % 3 != 0) {
-                this.presenca[i] = presenca;
-            }
-        } 
-        return "";
-        return "FREQUENCIA: " + this.presenca[0] + " | " + this.presenca[1] +
-                      " | " + this.presenca[2] + " | " + this.presenca[3] +
-                      " | " + this.presenca[4];
-    }*/
+    private int percorrerArray() {
     
-    public void chamada(boolean p, String d) {
-        /*this.presenca[0] = p;
-        this.data[0] = d;*/
-        for (int i = 0; i < this.presenca.length; i++) {
-            if (i % 3 != 0) {
-                this.presenca[i] = p;
-            }
+        for(int i = 0; i < this.presenca.length; i++) {
+            
+            if(this.presenca[i] == false) {
+                return i;
+            }    
+            
         }
+        
+        return -1;
+    }
+    
+    private int percorrerArrayData() {
+    
+        for(int i = 0; i < this.data.length; i++) {
+        
+            if(this.data[i] == null) {
+                return i;
+            }
+            
+        }
+        
+        return -1;
     }
     
     @Override
     public String toString() {
-        return "FREQUENCIA.....: " + this.presenca[0] + " | " + this.presenca[1] +
-                             " | " + this.presenca[2] + " | " + this.presenca[3] +
-                             " | " + this.presenca[4] + "\n" +
-               "DATA...........: " + this.data[0];
+        
+        String presenca = "";
+        String data = "";
+        
+        for(int i = 0; i < this.presenca.length; i++) {
+            
+            if(i == 0) {
+                presenca = presenca + this.presenca[i];
+            } else {
+                presenca = presenca + " | " + this.presenca.length; 
+            }
+            
+        }
+        
+        for(int i = 0; i < this.data.length; i++) {
+            
+            if(i == 0) {
+                data = data + this.data[i];
+            } else {
+                data = data + " | " + this.data.length; 
+            }
+            
+        }
+        
+        return "FREQUENCIA.....: " + presenca + "\n" +
+               "DATA...........: " + data;
     }    
 }
