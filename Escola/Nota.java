@@ -38,6 +38,18 @@ public class Nota {
         return media / 4;    
     }
     
+    public String devolveOConteudoDaPosicao() {
+        String nota = "";
+        
+        for (int i = 0; i < this.notas.length; i++) {                        
+            
+            nota = nota + this.notas[i] + "\n";                
+            
+        }
+        
+        return nota;
+    }
+    
     public String getAluno() {
         return this.aluno.getNome();
     }

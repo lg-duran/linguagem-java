@@ -1,23 +1,22 @@
 public class Materia {
 
-    private Aluno aluno;
-    private String[] materias = new String[4];
-    
-    public Materia(Aluno aluno) {
-        this.aluno = aluno;
+    private Nota nota;
+    private Nota[] notas = new Nota[4];
+        
+    public Materia(Nota nota) {
+        this.nota = nota;
     }
     
-    public void adicionarMateria(String materia) {
-        int posicaoLivreDoArray = percorrerArray();
-        
-        this.materias[posicaoLivreDoArray] = materia; 
+    public void adicionarNota(Nota nota) {
+        int posicaoVazia = percorrerArray();
+        this.notas[posicaoVazia] = nota;
     }
     
     private int percorrerArray() {
         
-        for (int i = 0; i < this.materias.length; i++) {
+        for (int i = 0; i < this.notas.length; i++) {
         
-            if (this.materias[i] == null) {
+            if (this.notas[i] == null) {
                 return i;
             }
             
@@ -28,18 +27,18 @@ public class Materia {
     
     @Override
     public String toString() {
-        String materia = "";
+        String nota = "";
         
-        for (int i = 0; i < this.materias.length; i++) {            
+        for (int i = 0; i < this.notas.length; i++) {            
             
             if(i == 0) {
-                materia = materia + this.materias[i];    
+                nota = nota + this.notas[i];    
             } else {
-                materia = materia + " | " + this.materias[i];    
+                nota = nota + " | " + this.notas[i];    
             }
             
         }
         
-        return "MATERIA........: " + materia;
+        return "NOTA...........: " + nota;
     }
 }

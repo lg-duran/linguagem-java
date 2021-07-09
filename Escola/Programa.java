@@ -6,19 +6,7 @@ public class Programa {
                
         Aluno aluno2 = new Aluno("Jurema", 2011);
          
-        
-        Materia materia1 = new Materia(aluno1);
-        
-        materia1.adicionarMateria("Matematica");
-        
-        materia1.adicionarMateria("Ciencias");
-        
-        materia1.adicionarMateria("Historia");
-        
-        materia1.adicionarMateria("Arte");
-        
-        
-                
+
         Nota nota1 = new Nota(aluno1);
         nota1.adicionarNota(90.0);        
         nota1.adicionarNota(75.0);
@@ -30,6 +18,12 @@ public class Programa {
         nota2.adicionarNota(90.0);
         nota2.adicionarNota(100.0);
         nota2.adicionarNota(95.0);
+        
+        
+        Materia materia1 = new Materia(nota1);
+        
+        materia1.adicionarNota(nota1);
+        
         
         
         
@@ -45,9 +39,17 @@ public class Programa {
                                                 TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
        
         
-        Boletim boletim1 = new Boletim(aluno1, nota1, materia1, frequencia1);
+        Boletim boletim1 = new Boletim(aluno1, nota1);
+        boletim1.adicionarMateria("Historia");
+        boletim1.adicionarMateria("Matematica");
+        boletim1.adicionarMateria("Ciencias");
+        boletim1.adicionarMateria("Arte");
         
-        Boletim boletim2 = new Boletim(aluno2, nota2, materia1, frequencia1);
+        Boletim boletim2 = new Boletim(aluno2, nota2);
+        boletim2.adicionarMateria("Arte");
+        boletim2.adicionarMateria("Matematica");
+        boletim2.adicionarMateria("Historia");
+        boletim2.adicionarMateria("Ciencias");
         
         
         Relatorio primeiroRelatorio = new Relatorio("Primeiro", primeiraSala, nota1, materia1, frequencia1, boletim1);
