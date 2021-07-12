@@ -28,24 +28,23 @@ public class Programa {
         
         
         Frequencia frequencia1 = new Frequencia(aluno1);
-        frequencia1.chamada(true, "24/06/");
+        frequencia1.chamada(true, "24/06");
         frequencia1.chamada(true, "25/06");
-        frequencia1.chamada(true, "28/06");
-        frequencia1.chamada(false, "29/06");
-        frequencia1.chamada(true, "30/06");
-        
+        frequencia1.chamada(true, "26/06");
+        frequencia1.chamada(false, "27/06");        
+        frequencia1.chamada(false, "28/06");
         
         Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(),
                                                 TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao()); 
        
         
-        Boletim boletim1 = new Boletim(aluno1, nota1);
+        Boletim boletim1 = new Boletim(aluno1, nota1, frequencia1);
         boletim1.adicionarMateria("Historia");
         boletim1.adicionarMateria("Matematica");
         boletim1.adicionarMateria("Ciencias");
         boletim1.adicionarMateria("Arte");
         
-        Boletim boletim2 = new Boletim(aluno2, nota2);
+        Boletim boletim2 = new Boletim(aluno2, nota2, frequencia1);
         boletim2.adicionarMateria("Arte");
         boletim2.adicionarMateria("Matematica");
         boletim2.adicionarMateria("Historia");

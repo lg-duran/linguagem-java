@@ -2,11 +2,13 @@ public class Boletim {
     
     private Aluno aluno;
     private Nota nota;
+    Frequencia frequencia;
     private String[] materias = new String[4];    
     
-    public Boletim(Aluno aluno, Nota nota) {
+    public Boletim(Aluno aluno, Nota nota, Frequencia frequencia) {
         this.aluno = aluno;
-        this.nota = nota;        
+        this.nota = nota;   
+        this.frequencia = frequencia;
     }
     
     public void adicionarMateria(String materia) {

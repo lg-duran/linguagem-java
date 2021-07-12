@@ -43,8 +43,12 @@ public class Nota {
         
         for (int i = 0; i < this.notas.length; i++) {                        
             
-            nota = nota + this.notas[i] + "\n";                
-            
+            if(i == 0) {
+                nota = nota + this.notas[i];    
+            } else {
+                nota = nota + " | " + this.notas[i];    
+            }
+                        
         }
         
         return nota;
