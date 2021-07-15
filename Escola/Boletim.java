@@ -1,19 +1,21 @@
 public class Boletim {
     
     private Aluno aluno;
-    private Nota nota;
-    Frequencia frequencia;
+    private Frequencia frequencia;
+    private double[] notas = new double[4];
     private String[] materias = new String[4];    
     
-    public Boletim(Aluno aluno, Nota nota, Frequencia frequencia) {
+    public Boletim(Aluno aluno, Frequencia frequencia) {
         this.aluno = aluno;
-        this.nota = nota;   
         this.frequencia = frequencia;
     }
     
-    public void adicionarMateria(String materia) {
+    public void adicionarMateria(String materia, double nota) {
         int posicaoVazia = percorrerArray();
         this.materias[posicaoVazia] = materia;
+        
+        int posicaoVaziaNotas = percorrerArrayNota();
+        this.notas[posicaoVaziaNotas] = nota;
     }
     
     private int percorrerArray() {
@@ -30,42 +32,100 @@ public class Boletim {
     } 
     
     
-    private String teste() {        
-        String nota = "" + this.nota.devolveOConteudoDaPosicao();        
-        String materia = "";        
-        String juncao = "";
+    private int percorrerArrayNota() {
         
-        for (int i = 0; i < this.materias.length; i++) {
-            
-            materia = materia + this.materias[i] + "\n"; 
-            
-            juncao =    
-                                                                        "\n" +
-            "===================================================================================================="
-                                                                      + "\n" +                                                        
-            "BOLETIM........: "                                       + "\n" +   
-            "ALUNO..........: "         +   this.aluno.getNome()      + "\n" +            
-            "MATERIA........: "         +   materias[i]               + "\n" +
-            "NOTA...........: "         +   nota                      + "\n" +                                                                                                    
-            "====================================================================================================";           
-        }    
+        for (int i = 0; i < this.notas.length; i++) {
         
-                        
-        return juncao;                
+            if (this.notas[i] == 0) {
+                return i;
+            }
+            
+        }
+        
+        return 0;
+    } 
+    
+    private String devolverConteudoDoArrayNotas() {
+    
+        String nota = "";
+    
+        for(int i = 0; i < this.notas.length; i++) {
+        
+            nota = nota + this.notas[i];
+        
+        }
+        
+        return nota;
     }
     
+    public double calcularMedia() {    
+    
+        double media = 0.0;
+        
+        for (int i = 0; i < notas.length; i++) {
+            
+            media = media + this.notas[i];
+            
+        }
+        
+        return media / 4;    
+    }
+    
+    private String teste() {    
+        String resultado = "";        
+        double media = calcularMedia();
+        int conclusao = this.frequencia.verificacao();
+        
+        if(media >= 75.0 && conclusao >= 3) {
+            resultado = "Aluno Aprovado";
+        } else {
+            resultado = "Aluno Reprovado";
+        }
+        
+        return resultado;
+    }
     
     @Override
     public String toString() {
         
-        return teste();
-              /*                                                      "\n" +
+        String boletim = "";
+        
+        for(int i = 0; i < this.materias.length; i++) {        
+        
+           if(i == 0) {
+               
+               boletim = boletim +
+               
+                                                                                  "\n" +
+               "                                     BOLETIM                                                        "
+                                                                                + "\n" +
+               "===================================================================================================="
+                                                                                + "\n" +
+               "ALUNO..........: "         +   this.aluno.getNome()             + "\n" +
+               "MATERIA........: "         +   this.materias[i]                 + "\n" +
+               "NOTA...........: "         +   this.notas[i]                       + "\n" +
+               "====================================================================================================";
+           
+           } else {
+               boletim = boletim +
+                                                                                 "\n" +    
+               "===================================================================================================="
+                                                                               + "\n" +
+               "MATERIA........: "         +      this.materias[i]             + "\n" +
+               "NOTA...........: "         +      this.notas[i]                + "\n" +   
+               "====================================================================================================";
+           }
+                   
+        }
+        
+        return boletim                                                                                 + "\n" +                      
+        "MEDIA..........: " + calcularMedia()                                                          + "\n" +
         "===================================================================================================="
-                                                                  + "\n" +                                                        
-        "BOLETIM........: "                                       + "\n" +   
-                                                  this.aluno      + "\n" +
-                                                  this.materia    + "\n" +
-        "NOTA...........: "        +              this.nota       + "\n" +                                                                                                    
-        "====================================================================================================";*/
+                                                                                                       + "\n" +
+                                                                                                         "\n" +
+        "===================================================================================================="
+                                                                                                       + "\n" + 
+        "                                  SITUACAO FINAL: " + teste()                                 + "\n" +
+        "====================================================================================================";    
     }
 }

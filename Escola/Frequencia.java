@@ -42,6 +42,21 @@ public class Frequencia {
         return -1;        
     }
     
+    public int verificacao() {
+        
+        int verificacao = 0;
+        
+        for(int i = 0; i < this.presenca.length; i++) {
+        
+            if (this.presenca[i] == true) {
+                verificacao = verificacao + 1;
+            } 
+            
+        }
+        
+        return verificacao;
+    }
+    
     private int percorrerArrayData() {
     
         for(int i = 0; i < this.data.length; i++) {
