@@ -14,8 +14,8 @@ public class Programa {
         frequencia1.chamada(false, "27/06");        
         frequencia1.chamada(false, "28/06");
         
-        Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE_PRIMEIRO_GRAU.getDescricao(),
-                                                TurmaPeriodo.TURMA_A_PERIODO_MATUTINO.getDescricao());
+        Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE.getDescricao(), SerieGrau.PRIMEIRO_GRAU.getDescricao(),
+                                                TurmaPeriodo.TURMA_A.getDescricao(), TurmaPeriodo.PERIODO_MATUTINO.getDescricao());
                                                 
         
         Boletim boletim1 = new Boletim(aluno1, frequencia1);
@@ -31,9 +31,9 @@ public class Programa {
         boletim2.adicionarMateria("Ciencias", 75.0);
         
         
-        Relatorio primeiroRelatorio = new Relatorio("Primeiro", aluno1, primeiraSala, boletim1);
+        Relatorio primeiroRelatorio = new Relatorio(aluno1, primeiraSala, boletim1);
         
-        Relatorio segundoRelatorio = new Relatorio("Segundo", aluno2, primeiraSala, boletim2);
+        Relatorio segundoRelatorio = new Relatorio(aluno2, primeiraSala, boletim2);
         
   
         System.out.println(primeiroRelatorio);
