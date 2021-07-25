@@ -29,6 +29,34 @@ public class Frequencia {
         return -1;
     }
     
+    public int devolvreConteudoArrayPresenca() {
+    
+        for(int i = 0; i < this.presenca.length; i++) {
+            
+            if(this.presenca[i] == false) {
+                return i;
+            }    
+            
+        }
+        
+        return -1;        
+    }
+    
+    public int verificacao() {
+        
+        int verificacao = 0;
+        
+        for(int i = 0; i < this.presenca.length; i++) {
+        
+            if (this.presenca[i] == true) {
+                verificacao = verificacao + 1;
+            } 
+            
+        }
+        
+        return verificacao;
+    }
+    
     private int percorrerArrayData() {
     
         for(int i = 0; i < this.data.length; i++) {
@@ -53,7 +81,7 @@ public class Frequencia {
             if(i == 0) {
                 presenca = presenca + this.presenca[i];
             } else {
-                presenca = presenca + " | " + this.presenca.length; 
+                presenca = presenca + " | " + this.presenca[i]; 
             }
             
         }
@@ -63,7 +91,7 @@ public class Frequencia {
             if(i == 0) {
                 data = data + this.data[i];
             } else {
-                data = data + " | " + this.data.length; 
+                data = data + " | " + this.data[i]; 
             }
             
         }

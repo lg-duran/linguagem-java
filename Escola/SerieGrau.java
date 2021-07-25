@@ -1,18 +1,19 @@
-public enum SerieGrau {
+public enum SerieGrau {    
+   
     
-    PRIMEIRA_SERIE_PRIMEIRO_GRAU("Primeira serie do primeiro grau"),
-    SEGUNDA_SERIE_PRIMEIRO_GRAU("Segunda serie do primeiro grau"),
-    TERCEIRA_SERIE_PRIMEIRO_GRAU("Terceira serie do primeiro grau"),
-    QUARTA_SERIE_PRIMEIRO_GRAU("Quarta serie do primeiro grau"),
-    QUINTA_SERIE_PRIMEIRO_GRAU("Quinta serie do primeiro grau"),
-    SEXTA_SERIE_PRIMEIRO_GRAU("Sexta serie do primeiro grau"),
-    SETIMA_SERIE_PRIMEIRO_GRAU("Setima serie do primeiro grau"),
-    OITAVA_SERIE_PRIMEIRO_GRAU("Oitava serie do primeiro grau"),
-    NONA_SERIE_PRIMEIRO_GRAU("Nona serie do primeiro grau"),     
+    PRIMEIRA_SERIE("Primeira serie"),
+    SEGUNDA_SERIE("Segunda serie"),
+    TERCEIRA_SERIE("Terceira serie"),
+    QUARTA_SERIE("Quarta serie"),
+    QUINTA_SERIE("Quinta serie"),
+    SEXTA_SERIE("Sexta serie"),
+    SETIMA_SERIE("Setima serie"),
+    OITAVA_SERIE("Oitava serie"),  
+    NONA_SERIE("Nona serie"),
     
-    PRIMEIRA_SERIE_SEGUNDO_GRAU("Primeira serie do segundo grau"),
-    SEGUNDA_SERIE_SEGUNDO_GRAU("Segunda serie do segundo grau"),
-    TERCEIRA_SERIE_SEGUNDO_GRAU("Terceira serie do segundo grau");
+    
+    PRIMEIRO_GRAU("Primeiro Grau"),
+    SEGUNDO_GRAU("Segundo Grau");
     
     private String descricao;
     
