@@ -1,29 +1,33 @@
 public class Materia {
 
-    private Nota nota;
-    private Nota[] notas = new Nota[4];
+    private Aluno aluno;
+    private String nome;
+    private double[] notas = new double[4];
         
-    public Materia(Nota nota) {
-        this.nota = nota;
+    public Materia(Aluno aluno, String nome) {
+        this.aluno = aluno;
+        this.nome = nome;
     }
     
-    public void adicionarNota(Nota nota) {
+    public void adicionarNota(double nota) {
         int posicaoVazia = percorrerArray();
-        this.notas[posicaoVazia] = nota;
+        this.notas[posicaoVazia] = nota;       
     }
     
     private int percorrerArray() {
         
-        for (int i = 0; i < this.notas.length; i++) {
+        for(int i = 0; i < this.notas.length; i++) {
         
-            if (this.notas[i] == null) {
+            if(this.notas[i] == 0) {
+            
                 return i;
+                
             }
             
         }
         
         return 0;
-    } 
+    }   
     
     @Override
     public String toString() {
@@ -32,13 +36,14 @@ public class Materia {
         for (int i = 0; i < this.notas.length; i++) {            
             
             if(i == 0) {
-                nota = nota + this.notas[i];    
+                nota = nota + " " + this.notas[i];    
             } else {
                 nota = nota + " | " + this.notas[i];    
             }
             
         }
         
-        return "NOTA...........: " + nota;
+        return "MATERIA........: " + nome + "\n" + 
+               "NOTA...........: " + nota ;
     }
 }

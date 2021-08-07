@@ -2,12 +2,14 @@ public class Boletim {
     
     private Aluno aluno;
     private Frequencia frequencia;
+    private Materia materia;
     private double[] notas = new double[4];
     private String[] materias = new String[4];    
     
-    public Boletim(Aluno aluno, Frequencia frequencia) {
-        this.aluno = aluno;
+    public Boletim(Aluno aluno/*, Frequencia frequencia, Materia materia*/) {
+        this.aluno = aluno;/*
         this.frequencia = frequencia;
+        this.materia = materia;*/
     }
     
     public void adicionarMateria(String materia, double nota) {
@@ -70,7 +72,7 @@ public class Boletim {
         
         return media / 4;    
     }
-    
+    /*
     private String teste() {    
         String resultado = "";        
         double media = calcularMedia();
@@ -83,7 +85,7 @@ public class Boletim {
         }
         
         return resultado;
-    }
+    }*/
     
     @Override
     public String toString() {
@@ -101,8 +103,8 @@ public class Boletim {
                                                                                 + "\n" +
                "===================================================================================================="
                                                                                 + "\n" +
-               "MATERIA........: "         +   this.materias[i]                 + "\n" +
-               "NOTA...........: "         +   this.notas[i]                    + "\n" +
+                                               this.materia                     + "\n" +
+               
                "====================================================================================================";
            
            } else {
@@ -110,8 +112,10 @@ public class Boletim {
                                                                                  "\n" +    
                "===================================================================================================="
                                                                                + "\n" +
-               "MATERIA........: "         +      this.materias[i]             + "\n" +
-               "NOTA...........: "         +      this.notas[i]                + "\n" +   
+                                                  this.materia                 + "\n" + 
+                                                                               
+               //"MATERIA........: "         +      this.materias[i]             + "\n" +
+               //"NOTA...........: "         +      this.notas[i]                + "\n" +   
                "====================================================================================================";
            }
                    
@@ -124,13 +128,16 @@ public class Boletim {
                               this.frequencia                                                          + "\n" +  
         "===================================================================================================="
                                                                                                        + "\n" +
-        "MEDIA..........: " + calcularMedia()                                                          + "\n" +
+        //"MEDIA..........: " + calcularMedia()                                                          + "\n" +
         "===================================================================================================="
                                                                                                        + "\n" +
                                                                                                          "\n" +
         "===================================================================================================="
                                                                                                        + "\n" + 
-        "                                  SITUACAO FINAL: " + teste()                                 + "\n" +
-        "====================================================================================================";    
+        "                                  SITUACAO FINAL: " /*+ teste()*/                             + "\n" +
+        "===================================================================================================="
+                                                                                                       + "\n" +
+                                                                                                         "\n" +
+                                           this.materia;                                                                  
     }
 }
