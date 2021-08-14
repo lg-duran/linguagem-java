@@ -1,9 +1,9 @@
 public class Boletim {   
 
-    private ListaDeMaterias lista;
+    private Materia[] materiasDoAluno = new Materia[10];
     
-    public Boletim(ListaDeMaterias lista) {
-        this.lista = lista;
+    public Boletim(Materia[] materiasDoAluno) {
+        this.materiasDoAluno = materiasDoAluno;
     }
 
     
@@ -20,10 +20,14 @@ public class Boletim {
         }
         
         return resultado;
-    }*/
-    
+    }*/   
+
+
+
+
     @Override
     public String toString() {
+
         
         String boletim = "";
         
@@ -39,8 +43,17 @@ public class Boletim {
                "===================================================================================================="
                                                                                 + "\n" +
                                               // this.materia.getAluno()          + "\n" +
-               "====================================================================================================" + "\n" +
-                   this.lista;
+               "====================================================================================================" + "\n" ;
+                   
+                 for (int i = 0; i < this.materiasDoAluno.length; i++) {
+            
+                    if (this.materiasDoAluno[i] != null) {
+
+                        boletim = boletim + this.materiasDoAluno[i].toString() + "\n";
+                
+                    }
+
+                 }
         
         
         return boletim;

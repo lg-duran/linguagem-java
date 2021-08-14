@@ -72,7 +72,7 @@ public class Programa {
                                                 TurmaPeriodo.TURMA_A.getDescricao(), TurmaPeriodo.PERIODO_MATUTINO.getDescricao());
         */                                        
         //associaçao de boletim com aluno nao esta muito clara.
-        Boletim boletim1 = new Boletim(lista1);
+        Boletim boletim1 = new Boletim(materiasDoAluno);
         //boletim1.adicionarMateria("Historia", 90.0);
         //boletim1.adicionarMateria("Matematica", 75.0);
         //boletim1.adicionarMateria("Ciencias", 89.0);
