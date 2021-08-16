@@ -52,8 +52,7 @@ public class Programa {
         materia7.adicionarNota(100.0);
         materia7.adicionarNota(100.0);
         materia7.adicionarNota(100.0);
-        materia7.adicionarNota(100.0);
-        
+        materia7.adicionarNota(100.0);        
 
         
         ListaDeMaterias lista1 = new ListaDeMaterias();
@@ -71,6 +70,13 @@ public class Programa {
 
         materiasDoAluno = lista1.materiasDo(aluno2);
 
+        Frequencia frequencia1 = new Frequencia();
+        frequencia1.chamada("16/08");
+        frequencia1.chamada("17/08");
+        frequencia1.chamada("18/08");
+        frequencia1.chamada("19/08");
+        frequencia1.chamada("20/08");
+        
         
         /*
         Frequencia frequencia1 = new Frequencia(materia1);
@@ -85,6 +91,7 @@ public class Programa {
         */                                        
         //associaçao de boletim com aluno nao esta muito clara.
         Boletim boletim1 = new Boletim(materiasDoAluno);
+        boletim1.avaliacao(frequencia1);
         //boletim1.adicionarMateria("Historia", 90.0);
         //boletim1.adicionarMateria("Matematica", 75.0);
         //boletim1.adicionarMateria("Ciencias", 89.0);

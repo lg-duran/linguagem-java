@@ -4,14 +4,26 @@ public class Boletim {
     
     public Boletim(Materia[] materiasDoAluno) {
         this.materiasDoAluno = materiasDoAluno;
-    }
-
+    }    
     
-    /*
-    private String teste() {    
+    public String avaliacao(Frequencia frequencia) {    
         String resultado = "";        
+        double media = 0;
         
-    }*/
+        for(int i = 0; i < this.materiasDoAluno.length; i++) {
+            
+            media = media + this.materiasDoAluno[i].devolverMedia();
+            
+        }
+        
+        if(media >= 75.0 && frequencia.verificacao() >= 3) {
+            resultado = "Aluno Aprovado";
+        } else {
+            resultado = "Aluno Reprovado";
+        }
+        
+        return resultado;
+    }
     
     @Override
     public String toString() {
@@ -30,7 +42,7 @@ public class Boletim {
                "                                     BOLETIM             "        + "\n" +
                "===================================================================================================="
                                                                                   + "\n" +
-               "====================================================================================================" + "\n" ;
+               "====================================================================================================" + "\n";
                    
                  for (int i = 0; i < this.materiasDoAluno.length; i++) {
             
@@ -43,7 +55,8 @@ public class Boletim {
                     }
 
                  }
-        
+                 
+                    
         
         return boletim;
     }

@@ -40,13 +40,9 @@ public class ListaDeMaterias {
 
 
         }
-
-        return listaDefinitiva;
-
-
-    }
-    
         
+        return listaDefinitiva;
+    }
     
     @Override
     public String toString() {

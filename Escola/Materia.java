@@ -33,6 +33,18 @@ public class Materia {
         return this.aluno;
     }
     
+    public double devolverMedia() {
+        double nota = 0;        
+        
+        for(int i = 0; i < this.notas.length; i++) {
+            
+            nota = nota + this.notas[i];
+            
+        }
+        
+        return nota / 4;
+    }
+    
     @Override
     public String toString() {
         String nota = "";
