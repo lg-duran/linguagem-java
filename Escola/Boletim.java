@@ -10,21 +10,9 @@ public class Boletim {
     /*
     private String teste() {    
         String resultado = "";        
-        double media = calcularMedia();
-        int conclusao = this.frequencia.verificacao();
         
-        if(media >= 75.0 && conclusao >= 3) {
-            resultado = "Aluno Aprovado";
-        } else {
-            resultado = "Aluno Reprovado";
-        }
-        
-        return resultado;
-    }*/   
-
-
-
-
+    }*/
+    
     @Override
     public String toString() {
 
@@ -41,15 +29,16 @@ public class Boletim {
               "====================================================================================================" +                                                                   "\n" +
                "                                     BOLETIM             "        + "\n" +
                "===================================================================================================="
-                                                                                + "\n" +
-                                              // this.materia.getAluno()          + "\n" +
+                                                                                  + "\n" +
                "====================================================================================================" + "\n" ;
                    
                  for (int i = 0; i < this.materiasDoAluno.length; i++) {
             
                     if (this.materiasDoAluno[i] != null) {
 
-                        boletim = boletim + this.materiasDoAluno[i].toString() + "\n";
+                        boletim = boletim +                                                                            
+                                            this.materiasDoAluno[i].toString()                                        + "\n" +
+                        "====================================================================================================" + "\n";
                 
                     }
 

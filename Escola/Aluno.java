@@ -22,7 +22,10 @@ public class Aluno {
     
     @Override
     public String toString() {
-        return "NOME.....: "   +  this.nome + "\n" +
-               "IDADE....: "   +  this.calcularIdade(2021);
+        return "====================================================================================================" + "\n" +        
+               "                                     DADOS DO ALUNO"                                                  + "\n" +        
+               "====================================================================================================" + "\n" +        
+               "NOME.....: "   +  this.nome + "\n" +
+               "IDADE....: "   +  this.calcularIdade(2021) + "\n";
     }
 } 

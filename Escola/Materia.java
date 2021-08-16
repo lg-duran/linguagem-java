@@ -47,7 +47,7 @@ public class Materia {
             
         }
         
-        return "MATERIA........: " + nome + "\n" + 
+        return "MATERIA........: " + " " + nome + "\n" + 
                "NOTAS..........: " + nota ;
     }
 }

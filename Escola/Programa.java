@@ -19,8 +19,8 @@ public class Programa {
         materia2.adicionarNota(97.0);
         materia2.adicionarNota(92.0);
         materia2.adicionarNota(82.0);
-        materia2.adicionarNota(100.0);        
-
+        materia2.adicionarNota(100.0);  
+        
 
         Materia materia3 = new Materia(aluno2, "Arte");
         materia3.adicionarNota(02.0);
@@ -35,30 +35,42 @@ public class Programa {
         materia4.adicionarNota(95.0);
         materia4.adicionarNota(98.0);
 
+        
+        Materia materia5 = new Materia(aluno2, "Redacao");
+        materia5.adicionarNota(100.0);
+        materia5.adicionarNota(100.0);
+        materia5.adicionarNota(87.0);
+        materia5.adicionarNota(92.0);
+        
+        Materia materia6 = new Materia(aluno2, "Ingles");
+        materia6.adicionarNota(75.0);
+        materia6.adicionarNota(84.0);
+        materia6.adicionarNota(43.0);
+        materia6.adicionarNota(97.0);
+        
+        Materia materia7 = new Materia(aluno2, "Historia");
+        materia7.adicionarNota(100.0);
+        materia7.adicionarNota(100.0);
+        materia7.adicionarNota(100.0);
+        materia7.adicionarNota(100.0);
+        
 
         
         ListaDeMaterias lista1 = new ListaDeMaterias();
         lista1.chamada(materia1);
         lista1.chamada(materia2);
         lista1.chamada(materia3);
-        lista1.chamada(materia4);    
-       
-
+        lista1.chamada(materia4);  
+        lista1.chamada(materia5);  
+        lista1.chamada(materia6);         
+        lista1.chamada(materia7);  
+        
 
 
         Materia[] materiasDoAluno = new Materia[10];
 
         materiasDoAluno = lista1.materiasDo(aluno2);
 
-        for (int i = 0; i < materiasDoAluno.length; i++) {
-            
-            System.out.println(materiasDoAluno[i]);
-
-        }
-
-
-        
-        
         
         /*
         Frequencia frequencia1 = new Frequencia(materia1);
@@ -85,7 +97,7 @@ public class Programa {
         //boletim2.adicionarMateria("Ciencias", 75.0);
         
         
-        Relatorio primeiroRelatorio = new Relatorio(boletim1);
+        Relatorio primeiroRelatorio = new Relatorio(aluno2, boletim1);
         
         //Relatorio segundoRelatorio = new Relatorio(boletim2);
         

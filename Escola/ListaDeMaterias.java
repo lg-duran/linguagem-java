@@ -34,8 +34,6 @@ public class ListaDeMaterias {
 
                 if (this.materias[i].getAluno() == aluno) {                
                     listaDefinitiva[i] = this.materias[i];
-
-                    System.out.println("###" + this.materias[i]);
                 } 
 
             }
@@ -48,6 +46,7 @@ public class ListaDeMaterias {
 
     }
     
+        
     
     @Override
     public String toString() {
