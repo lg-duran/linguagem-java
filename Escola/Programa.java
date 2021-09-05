@@ -1,11 +1,9 @@
 public class Programa {
 
-    public static void main(String[] args) { 
-        
+    public static void main(String[] args) {        
 
 
-        Aluno aluno1 = new Aluno("Astoufino", 2008);
-               
+        Aluno aluno1 = new Aluno("Astoufino", 2008);               
         Aluno aluno2 = new Aluno("Jurema", 2011);
         
         Materia materia1 = new Materia(aluno1, "Portugues");
@@ -56,26 +54,26 @@ public class Programa {
 
         
         ListaDeMaterias lista1 = new ListaDeMaterias();
-        lista1.chamada(materia1);
-        lista1.chamada(materia2);
-        lista1.chamada(materia3);
-        lista1.chamada(materia4);  
-        lista1.chamada(materia5);  
-        lista1.chamada(materia6);         
-        lista1.chamada(materia7);  
+        lista1.adicionar(materia1);
+        lista1.adicionar(materia2);
+        lista1.adicionar(materia3);
+        lista1.adicionar(materia4);  
+        lista1.adicionar(materia5);  
+        lista1.adicionar(materia6);         
+        lista1.adicionar(materia7);  
         
 
 
         Materia[] materiasDoAluno = new Materia[10];
 
-        materiasDoAluno = lista1.materiasDo(aluno2);
-
-        Frequencia frequencia1 = new Frequencia();
+        materiasDoAluno = lista1.materiasDo(aluno1);
+/*
+        Frequencia frequencia1 = new Frequencia(mateira1);
         frequencia1.chamada("16/08");
         frequencia1.chamada("17/08");
         frequencia1.chamada("18/08");
         frequencia1.chamada("19/08");
-        frequencia1.chamada("20/08");
+        frequencia1.chamada("20/08");*/
         
         
         /*
@@ -90,8 +88,8 @@ public class Programa {
                                                 TurmaPeriodo.TURMA_A.getDescricao(), TurmaPeriodo.PERIODO_MATUTINO.getDescricao());
         */                                        
         //associaçao de boletim com aluno nao esta muito clara.
-        Boletim boletim1 = new Boletim(materiasDoAluno);
-        boletim1.avaliacao(frequencia1);
+        Boletim boletim1 = new Boletim();
+        boletim1.criarBoletim(materiasDoAluno);
         //boletim1.adicionarMateria("Historia", 90.0);
         //boletim1.adicionarMateria("Matematica", 75.0);
         //boletim1.adicionarMateria("Ciencias", 89.0);
@@ -104,7 +102,7 @@ public class Programa {
         //boletim2.adicionarMateria("Ciencias", 75.0);
         
         
-        Relatorio primeiroRelatorio = new Relatorio(aluno2, boletim1);
+        Relatorio primeiroRelatorio = new Relatorio(aluno1, boletim1);
         
         //Relatorio segundoRelatorio = new Relatorio(boletim2);
         

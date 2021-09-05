@@ -1,6 +1,7 @@
 public class Materia {
 
     private Aluno aluno;
+    //private Vetor vetor = new Vetor();
     private String nome;
     private double[] notas = new double[4];
         
@@ -10,39 +11,21 @@ public class Materia {
     }
     
     public void adicionarNota(double nota) {
-        int posicaoVazia = percorrerArray();
+        int posicaoVazia = Vetor.percorrerArray(this.notas);
         this.notas[posicaoVazia] = nota;       
-    }
-    
-    private int percorrerArray() {
-        
-        for(int i = 0; i < this.notas.length; i++) {
-        
-            if(this.notas[i] == 0) {
-            
-                return i;
-                
-            }
-            
-        }
-        
-        return 0;
-    }   
+    }    
     
     public Aluno getAluno() {
         return this.aluno;
     }
     
-    public double devolverMedia() {
-        double nota = 0;        
-        
-        for(int i = 0; i < this.notas.length; i++) {
-            
-            nota = nota + this.notas[i];
-            
-        }
-        
-        return nota / 4;
+    public double[] getNotas() {
+        return notas;
+    }
+    
+    public boolean aprovadoPorMedia() {
+        double media = Vetor.calcularMedia(notas);        
+        return media >= 70;
     }
     
     @Override
@@ -59,7 +42,8 @@ public class Materia {
             
         }
         
-        return "MATERIA........: " + " " + nome + "\n" + 
-               "NOTAS..........: " + nota ;
+        return "MATERIA........: " + " "  + nome + "\n" + 
+               "NOTAS..........: " + nota + "\n" +
+               "MEDIA..........: " + " "  + Vetor.calcularMedia(notas);
     }
 }

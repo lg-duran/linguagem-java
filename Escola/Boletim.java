@@ -1,29 +1,29 @@
 public class Boletim {   
-
-    private Materia[] materiasDoAluno = new Materia[10];
     
-    public Boletim(Materia[] materiasDoAluno) {
-        this.materiasDoAluno = materiasDoAluno;
+    private Materia[] materiasDoAluno = new Materia[10];    
+    
+    public Boletim() {        
     }    
     
-    public String avaliacao(Frequencia frequencia) {    
-        String resultado = "";        
-        double media = 0;
+    public void criarBoletim(Materia[] materiasDoAluno) {
+        this.materiasDoAluno = materiasDoAluno;                
+    }
+    
+    /*
+        String resultado = ""; 
+        Materia  materia = Vetor.devolverConteudoDoArray(materiasDoAluno);
         
-        for(int i = 0; i < this.materiasDoAluno.length; i++) {
-            
-            media = media + this.materiasDoAluno[i].devolverMedia();
-            
-        }
         
-        if(media >= 75.0 && frequencia.verificacao() >= 3) {
-            resultado = "Aluno Aprovado";
+        boolean aprovacao;
+        
+        if(frequencia.validacao() == true) {
+            resultado = "                                     Aluno Aprovado";
         } else {
-            resultado = "Aluno Reprovado";
+            resultado = "                                     Aluno Reprovado";
         }
         
         return resultado;
-    }
+    */
     
     @Override
     public String toString() {
@@ -56,8 +56,11 @@ public class Boletim {
 
                  }
                  
-                    
-        
-        return boletim;
+                 /*return boletim + this.frequencia +                 
+                 "====================================================================================================" + "\n" +   
+                      //                               avaliacao() + "\n" +   
+                 "===================================================================================================="
+                 */
+                return boletim;
     }
 }

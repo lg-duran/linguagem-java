@@ -1,60 +1,39 @@
 public class Frequencia {
     
-    private String[] data = new String[5];
+    //private Vetor vetor = new Vetor();
+    private Materia materia;
+    private String[] data = new String[200];
         
-    public Frequencia() {
+    public Frequencia(Materia materia) {
+        this.materia = materia;
     }
         
     public void chamada(String data) {        
-        int posicaoLivreDoArrayData = percorrerArray();
-        this.data[posicaoLivreDoArrayData] = data;
-    }
-
-    private int percorrerArray() {
-    
-        for(int i = 0; i < this.data.length; i++) {
-        
-            if(this.data[i] == null) {
-                return i;
-            }
-            
-        }
-        
-        return -1;
+        int posicaoLivreDoArray = Vetor.percorrerArray(this.data);
+        this.data[posicaoLivreDoArray] = data;
     }
     
-    public int verificacao() {
-        
-        int verificacao = 0;
-        
-        for(int i = 0; i < this.data.length; i++) {
-        
+    private double porcentagemDePresenca() {
+        int aulas = aulasAssistidas();        
+        return aulas / this.data.length * 100;
+    }
+    
+    private int aulasAssistidas() {    
+        int contadorDePosicoesOcupados = 0;        
+        for(int i = 0; i < this.data.length; i++) {            
             if (this.data[i] != null) {
-                verificacao = verificacao + 1;
-            } 
-            
-        }
-        
-        return verificacao;
-    }
+                contadorDePosicoesOcupados++;
+            }            
+        }        
+        return contadorDePosicoesOcupados;
+    }     
     
-    
+    public boolean aprovacaoDeFrequencia() {
+        return porcentagemDePresenca() >= 75;
+    }    
     
     @Override
-    public String toString() {
-        String data = "";
-        
-        for(int i = 0; i < this.data.length; i++) {
-            
-            if(i == 0) {
-                data = data + this.data[i];
-            } else {
-                data = data + " | " + this.data[i]; 
-            }
-            
-        }
-        
-        return "FREQUENCIA.....: " + data + "\n";
-               
+    public String toString() {   
+        return "FREQUENCIA.....: " + porcentagemDePresenca() + "%" + "\n";
     }    
 }
