@@ -2,7 +2,7 @@ public class Frequencia {
     
     //private Vetor vetor = new Vetor();
     private Materia materia;
-    private String[] data = new String[200];
+    private String[] data = new String[5];
         
     public Frequencia(Materia materia) {
         this.materia = materia;
@@ -11,6 +11,14 @@ public class Frequencia {
     public void chamada(String data) {        
         int posicaoLivreDoArray = Vetor.percorrerArray(this.data);
         this.data[posicaoLivreDoArray] = data;
+    }
+    
+    public Aluno getAluno() {
+        return this.materia.getAluno();
+    }
+    
+    public Materia getMateria() {
+        return this.materia;
     }
     
     private double porcentagemDePresenca() {
@@ -31,6 +39,10 @@ public class Frequencia {
     public boolean aprovacaoDeFrequencia() {
         return porcentagemDePresenca() >= 75;
     }    
+    
+    public boolean aporvacaoPorMateria() {
+        return this.materia.aprovadoPorMedia();
+    }
     
     @Override
     public String toString() {   

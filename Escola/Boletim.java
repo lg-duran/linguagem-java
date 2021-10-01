@@ -1,29 +1,40 @@
 public class Boletim {   
     
-    private Materia[] materiasDoAluno = new Materia[10];    
+    private Aluno aluno;
+    private Frequencia[] frequenciaDoAluno = new Frequencia[10];    
     
-    public Boletim() {        
-    }    
+    public Boletim(Aluno aluno) {        
+        this.aluno = aluno;
+    }  
     
-    public void criarBoletim(Materia[] materiasDoAluno) {
-        this.materiasDoAluno = materiasDoAluno;                
+    public void criarBoletim(Frequencia[] frequenciaDoAluno) {
+        this.frequenciaDoAluno = frequenciaDoAluno;                
     }
     
-    /*
+    public String aprovadoOuReprovado() {
         String resultado = ""; 
-        Materia  materia = Vetor.devolverConteudoDoArray(materiasDoAluno);
+        boolean aprovado = true;
         
+        for(int i = 0; i < this.frequenciaDoAluno.length; i++) {
+            
+            if (this.frequenciaDoAluno[i] != null) {
+                
+                if(this.frequenciaDoAluno[i].aprovacaoDeFrequencia() && this.frequenciaDoAluno[i].aporvacaoPorMateria() == false) {
+                    aprovado = false;
+                } 
+                
+            }
+            
+        }        
         
-        boolean aprovacao;
-        
-        if(frequencia.validacao() == true) {
+        if (aprovado == true) {
             resultado = "                                     Aluno Aprovado";
         } else {
             resultado = "                                     Aluno Reprovado";
         }
         
         return resultado;
-    */
+    }
     
     @Override
     public String toString() {
@@ -42,25 +53,23 @@ public class Boletim {
                "                                     BOLETIM             "        + "\n" +
                "===================================================================================================="
                                                                                   + "\n" +
-               "====================================================================================================" + "\n";
+               "====================================================================================================";
                    
-                 for (int i = 0; i < this.materiasDoAluno.length; i++) {
+                 for (int i = 0; i < this.frequenciaDoAluno.length; i++) {
             
-                    if (this.materiasDoAluno[i] != null) {
+                    if (this.frequenciaDoAluno[i] != null) {
 
-                        boletim = boletim +                                                                            
-                                            this.materiasDoAluno[i].toString()                                        + "\n" +
-                        "====================================================================================================" + "\n";
-                
+                        boletim = boletim + "\n" +                                                                            
+                                            this.frequenciaDoAluno[i].getMateria()                                        + "\n" +
+                        "====================================================================================================" + "\n" +
+                        this.frequenciaDoAluno[i] +                 
+                        "===================================================================================================="; 
                     }
 
                  }
                  
-                 /*return boletim + this.frequencia +                 
-                 "====================================================================================================" + "\n" +   
-                      //                               avaliacao() + "\n" +   
-                 "===================================================================================================="
-                 */
-                return boletim;
+                return boletim     + "\n" +   
+                                                aprovadoOuReprovado() + "\n" +   
+                        "====================================================================================================";
     }
 }

@@ -1,4 +1,4 @@
-public class Aluno {
+ public class Aluno {
 
     private String nome;
     private int anoDeNascimento;    
