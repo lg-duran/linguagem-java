@@ -20,14 +20,14 @@ public class Programa {
         astoufinoPortugues.adicionarNota(89.0);
         astoufinoPortugues.adicionarNota(99.0);
         
-        Frequencia frequenciaDoAstoufino = new Frequencia(astoufinoPortugues);
-        frequenciaDoAstoufino.chamada("16/08");
-        frequenciaDoAstoufino.chamada("17/08");
-        frequenciaDoAstoufino.chamada("18/08");
-        frequenciaDoAstoufino.chamada("19/08");
-        frequenciaDoAstoufino.chamada("20/08");      
+        Frequencia frequenciaDoAstoufinoPortugues = new Frequencia(astoufinoPortugues);
+        frequenciaDoAstoufinoPortugues.chamada("16/08");
+        frequenciaDoAstoufinoPortugues.chamada("17/08");
+        frequenciaDoAstoufinoPortugues.chamada("18/08");
+        frequenciaDoAstoufinoPortugues.chamada("19/08");
+        frequenciaDoAstoufinoPortugues.chamada("20/08");      
         
-
+        
         
         
         
@@ -38,23 +38,23 @@ public class Programa {
         Aluno jurema = new Aluno("Jurema", 2011);
         
         Materia juremaCiencias = new Materia(jurema, "Ciencias");
+        juremaCiencias.adicionarNota(99.0);
         juremaCiencias.adicionarNota(95.0);
-        juremaCiencias.adicionarNota(98.0);
         juremaCiencias.adicionarNota(100.0);
-        juremaCiencias.adicionarNota(92.0);  
+        juremaCiencias.adicionarNota(98.0);  
         
         Frequencia frequenciaJuremaCiencias = new Frequencia(juremaCiencias);
         frequenciaJuremaCiencias.chamada("16/08");
-        frequenciaJuremaCiencias.chamada("17/08");
+        frequenciaJuremaCiencias.chamada("17/08");        
         frequenciaJuremaCiencias.chamada("18/08");
         frequenciaJuremaCiencias.chamada("19/08");
         frequenciaJuremaCiencias.chamada("20/08");
 
         Materia juremaArte = new Materia(jurema, "Arte");
         juremaArte.adicionarNota(100.0);
-        juremaArte.adicionarNota(100.0);
-        juremaArte.adicionarNota(100.0);
-        juremaArte.adicionarNota(100.0);
+        juremaArte.adicionarNota(10.0);
+        juremaArte.adicionarNota(10.0);
+        juremaArte.adicionarNota(10.0);
         
         Frequencia frequenciaJuremaArte = new Frequencia(juremaArte);
         frequenciaJuremaArte.chamada("16/08");
@@ -82,59 +82,21 @@ public class Programa {
         listaDeFrequencia.adicionar(frequenciaJuremaCiencias);
         listaDeFrequencia.adicionar(frequenciaJuremaArte);
         listaDeFrequencia.adicionar(frequenciaJuremaMatematica);
+        //listaDeFrequencia.adicionar(frequenciaDoAstoufinoPortugues);
         
-        Frequencia[] frequenciasParaImpressao = new Frequencia[10];
-         
-        frequenciasParaImpressao = listaDeFrequencia.frequenciaDo(jurema);
+        //Essas 2 linhas de codigo eu nao presciso, isso so esta criando complexidade no codigo.
+        //Frequencia[] frequenciasParaImpressao = new Frequencia[10];         
+        //frequenciasParaImpressao = listaDeFrequencia.frequenciaDo(jurema);
         
 
 //**************************************************************************************************************************************
 //**************************************************************************************************************************************
 //**************************************************************************************************************************************
         
+
        
-/*
-        Frequencia frequencia1 = new Frequencia(mateira1);
-        frequencia1.chamada("16/08");
-        frequencia1.chamada("17/08");
-        frequencia1.chamada("18/08");
-        frequencia1.chamada("19/08");
-        frequencia1.chamada("20/08");*/
-        
-        
-        /*
-        Frequencia frequencia1 = new Frequencia(materia1);
-        frequencia1.chamada("24/06");
-        frequencia1.chamada("25/06");
-        frequencia1.chamada("26/06");
-        frequencia1.chamada("27/06");        
-        frequencia1.chamada("28/06");
-        
-        Sala primeiraSala = new Sala("Sala 01", SerieGrau.PRIMEIRA_SERIE.getDescricao(), SerieGrau.PRIMEIRO_GRAU.getDescricao(),
-                                                TurmaPeriodo.TURMA_A.getDescricao(), TurmaPeriodo.PERIODO_MATUTINO.getDescricao());
-        */
-       
-        //associaçao de boletim com aluno nao esta muito clara.
-        Boletim boletimDaJurema = new Boletim(jurema);
-        boletimDaJurema.criarBoletim(frequenciasParaImpressao);
-        
-        
-        //Boletim boletim2 = new Boletim(lista2);
-        //boletim2.adicionarMateria("Arte", 89.0);
-        //boletim2.adicionarMateria("Matematica", 100.0);
-        //boletim2.adicionarMateria("Historia", 90.0);
-        //boletim2.adicionarMateria("Ciencias", 75.0);
-        
-        
-        Relatorio primeiroRelatorio = new Relatorio(jurema, boletimDaJurema);
-        
-        //Relatorio segundoRelatorio = new Relatorio(boletim2);
-        
-  
-        System.out.println(primeiroRelatorio);
-        
-      
-        
-        //System.out.println(segundoRelatorio);   
+        Boletim boletim = new Boletim(listaDeFrequencia);
+        System.out.println(boletim.imprimir());
+         
     }
 } 
