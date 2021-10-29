@@ -2,7 +2,7 @@ public class Programa {
 
     public static void main(String[] args) {        
 
-        ListaDeFrequencia listaDeFrequencia = new ListaDeFrequencia();
+        BancoDeDados bancoDeDados = new BancoDeDados();
         
         
         
@@ -27,12 +27,21 @@ public class Programa {
         frequenciaDoAstoufinoPortugues.chamada("19/08");
         frequenciaDoAstoufinoPortugues.chamada("20/08");      
         
+        Materia astoufinoMatematica = new Materia(astoufino, "Matematica");
+        astoufinoMatematica.adicionarNota(75.0);
+        astoufinoMatematica.adicionarNota(95.0);
+        astoufinoMatematica.adicionarNota(85.0);
+        astoufinoMatematica.adicionarNota(70.0);
         
+        Frequencia frequenciaDoAstoufinoMatematica = new Frequencia(astoufinoMatematica);
+        frequenciaDoAstoufinoMatematica.chamada("16/08");
+        frequenciaDoAstoufinoMatematica.chamada("17/08");
+        frequenciaDoAstoufinoMatematica.chamada("18/08");
+        frequenciaDoAstoufinoMatematica.chamada("19/08");
+        frequenciaDoAstoufinoMatematica.chamada("20/08");
         
-        
-        
-        
-       
+        bancoDeDados.adicionar(frequenciaDoAstoufinoPortugues);
+        bancoDeDados.adicionar(frequenciaDoAstoufinoMatematica);
         
         
         Aluno jurema = new Aluno("Jurema", 2011);
@@ -52,9 +61,9 @@ public class Programa {
 
         Materia juremaArte = new Materia(jurema, "Arte");
         juremaArte.adicionarNota(100.0);
-        juremaArte.adicionarNota(10.0);
-        juremaArte.adicionarNota(10.0);
-        juremaArte.adicionarNota(10.0);
+        juremaArte.adicionarNota(100.0);
+        juremaArte.adicionarNota(100.0);
+        juremaArte.adicionarNota(100.0);
         
         Frequencia frequenciaJuremaArte = new Frequencia(juremaArte);
         frequenciaJuremaArte.chamada("16/08");
@@ -79,9 +88,9 @@ public class Programa {
         
         
        //************************************************************************************************************
-        listaDeFrequencia.adicionar(frequenciaJuremaCiencias);
-        listaDeFrequencia.adicionar(frequenciaJuremaArte);
-        listaDeFrequencia.adicionar(frequenciaJuremaMatematica);
+        bancoDeDados.adicionar(frequenciaJuremaCiencias);
+        bancoDeDados.adicionar(frequenciaJuremaArte);
+        bancoDeDados.adicionar(frequenciaJuremaMatematica);
         //listaDeFrequencia.adicionar(frequenciaDoAstoufinoPortugues);
         
         //Essas 2 linhas de codigo eu nao presciso, isso so esta criando complexidade no codigo.
@@ -93,10 +102,12 @@ public class Programa {
 //**************************************************************************************************************************************
 //**************************************************************************************************************************************
         
-
-       
-        Boletim boletim = new Boletim(listaDeFrequencia);
-        System.out.println(boletim.imprimir());
+        Frequencia[] lista = bancoDeDados.frequenciaDo(astoufino);      
+        
+        
+        Boletim boletim = new Boletim();
+        boletim.registrarLista(lista);
+        boletim.imprimir();
          
     }
 } 

@@ -22,7 +22,7 @@ public class Frequencia {
     }
     
     private double porcentagemDePresenca() {
-        int aulas = aulasAssistidas();        
+        double aulas = aulasAssistidas();        
         return aulas / this.data.length * 100;
     }
     
@@ -46,6 +46,7 @@ public class Frequencia {
     
     @Override
     public String toString() {   
-        return "FREQUENCIA.....: " + porcentagemDePresenca() + "%" + "\n";
+        return "FREQUENCIA.....: " + porcentagemDePresenca() + "%" + "\n" +
+        "====================================================================================================";
     }    
 }
